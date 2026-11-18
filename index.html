@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#17152f" />
+    <meta
+      name="description"
+      content="HERGUARD helps you learn to recognise online risks through practical, privacy-conscious cyber-safety tools."
+    />
+    <title>HERGUARD — Your digital safety toolkit</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="HERGUARD home">
+        <span class="brand-mark" aria-hidden="true">H</span>
+        <span
+          >HER<span class="brand-accent">GUARD</span
+          ><small>Digital safety, made clearer</small></span
+        >
+      </a>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-expanded="false"
+        aria-controls="primaryNav"
+      >
+        Menu
+      </button>
+      <nav id="primaryNav" class="nav">
+        <a href="#dashboard">Dashboard</a>
+        <a href="#checker">ScamSense</a>
+        <a href="#challenge">Cyber Challenge</a>
+        <a href="#toolkit">Safety toolkit</a>
+        <a href="#about">About</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">
+            <span class="eyebrow-dot"></span> YOUR ONLINE SAFETY COMPANION
+          </p>
+          <h1>Feel safer.<br /><span>Know the signs.</span></h1>
+          <p class="hero-copy">
+            Build confidence online with practical tools that help you spot
+            common warning signs, practise safer decisions, and find trusted
+            support.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#checker"
+              >Check a message <span aria-hidden="true">↗</span></a
+            >
+            <a class="button button-secondary" href="#challenge"
+              >Take the cyber quiz</a
+            >
+          </div>
+          <div class="trust-note">
+            <span aria-hidden="true">◈</span> Private by design: your checker
+            text is analysed in this browser and is not sent to a server.
+          </div>
+        </div>
+        <div
+          class="hero-visual"
+          aria-label="HERGUARD digital safety dashboard illustration"
+        >
+          <div class="orb orb-one"></div>
+          <div class="orb orb-two"></div>
+          <div class="visual-card main-visual-card">
+            <div class="visual-card-top">
+              <span class="mini-shield">✓</span><span>SAFETY SNAPSHOT</span
+              ><span class="live-dot"></span>
+            </div>
+            <div class="visual-title">Think before you click.</div>
+            <div class="visual-line">
+              <span class="line-icon">↗</span
+              ><span
+                ><b>Pause</b><small>Urgency can be a warning sign.</small></span
+              >
+            </div>
+            <div class="visual-line">
+              <span class="line-icon">◎</span
+              ><span
+                ><b>Verify</b
+                ><small>Use a trusted route to contact them.</small></span
+              >
+            </div>
+            <div class="visual-line">
+              <span class="line-icon">⌑</span
+              ><span
+                ><b>Protect</b
+                ><small>Never share passwords or one-time codes.</small></span
+              >
+            </div>
+            <div class="visual-progress"><span></span></div>
+            <small class="visual-foot">Small checks. Stronger habits.</small>
+          </div>
+          <div class="floating-chip chip-top">
+            <span>✦</span> Learn without judgement
+          </div>
+          <div class="floating-chip chip-bottom">
+            <span>◉</span> Your data stays here
+          </div>
+        </div>
+        <div class="hero-decoration" aria-hidden="true"></div>
+      </section>
+
+      <section class="stats-strip" aria-label="What HERGUARD offers">
+        <div><strong>01</strong><span>Recognise warning signs</span></div>
+        <div><strong>02</strong><span>Practise with scenarios</span></div>
+        <div><strong>03</strong><span>Find practical next steps</span></div>
+      </section>
+
+      <section id="dashboard" class="section dashboard-section">
+        <div class="section-heading dashboard-heading">
+          <p class="eyebrow">YOUR PROGRESS / AT A GLANCE</p>
+          <h2>Your safety <span>dashboard.</span></h2>
+          <p>
+            A private, on-device snapshot of your learning. HERGUARD stores
+            progress counts and checklist ticks locally—not the messages you
+            check.
+          </p>
+        </div>
+        <div class="dashboard-grid" aria-label="Your HERGUARD progress">
+          <article class="dashboard-card dashboard-feature">
+            <div class="dashboard-card-top">
+              <span class="dashboard-icon">⌕</span
+              ><span class="dashboard-label">SCAMSENSE REVIEWS</span>
+            </div>
+            <strong id="dashboardScans">0</strong>
+            <p>Messages reviewed on this device</p>
+            <a href="#checker" class="dashboard-link"
+              >Review a message <span aria-hidden="true">↗</span></a
+            >
+          </article>
+          <article class="dashboard-card">
+            <div class="dashboard-card-top">
+              <span class="dashboard-icon">✦</span
+              ><span class="dashboard-label">BEST QUIZ SCORE</span>
+            </div>
+            <strong
+              ><span id="dashboardBest">—</span
+              ><small class="metric-denominator"> / 5</small></strong
+            >
+            <p id="dashboardQuizHint">
+              Complete the cyber challenge to set a best score.
+            </p>
+            <a href="#challenge" class="dashboard-link"
+              >Practise now <span aria-hidden="true">↗</span></a
+            >
+          </article>
+          <article class="dashboard-card dashboard-checklist-card">
+            <div class="dashboard-card-top">
+              <span class="dashboard-icon">✓</span
+              ><span class="dashboard-label">SAFETY TOOLKIT</span>
+            </div>
+            <strong
+              ><span id="dashboardChecks">0</span
+              ><small class="metric-denominator">
+                / <span id="dashboardChecksTotal">12</span></small
+              ></strong
+            >
+            <p id="dashboardChecklistHint">Checklist actions completed</p>
+            <div
+              class="dashboard-progress-track"
+              role="progressbar"
+              aria-label="Safety checklist completion"
+              aria-valuemin="0"
+              aria-valuemax="12"
+              aria-valuenow="0"
+              id="dashboardChecklistBar"
+            >
+              <span id="dashboardChecklistFill"></span>
+            </div>
+            <a href="#toolkit" class="dashboard-link"
+              >Continue checklist <span aria-hidden="true">↗</span></a
+            >
+          </article>
+        </div>
+        <p class="dashboard-privacy">
+          <span aria-hidden="true">◈</span> This dashboard is stored on this
+          device only. Clearing browser data may reset it.
+        </p>
+      </section>
+
+      <section id="checker" class="section checker-section">
+        <div class="section-heading">
+          <p class="eyebrow">01 / MESSAGE CHECKER</p>
+          <h2>Meet <span>ScamSense.</span></h2>
+          <p>
+            Paste a suspicious message to review common warning signs. ScamSense
+            checks message patterns and visible URL characteristics, then lets
+            you copy or download an educational review.
+          </p>
+        </div>
+        <div class="checker-grid">
+          <form id="checkerForm" class="panel checker-form">
+            <label for="messageInput">Suspicious message or email text</label>
+            <textarea
+              id="messageInput"
+              rows="7"
+              maxlength="5000"
+              placeholder="Example: Your account will be closed today. Verify your password at http://example.invalid ..."
+              required
+            ></textarea>
+            <div class="input-meta">
+              <span
+                >Do not include real passwords, one-time codes, or private
+                information.</span
+              ><span id="charCount">0 / 5000</span>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="button button-primary">
+                Review warning signs <span aria-hidden="true">→</span>
+              </button>
+              <button type="button" id="sampleButton" class="text-button">
+                Try a sample
+              </button>
+              <button type="button" id="clearButton" class="text-button">
+                Clear
+              </button>
+            </div>
+            <p class="fine-print">
+              Your text is processed locally in this page. It is not saved in
+              browser storage.
+            </p>
+          </form>
+          <div
+            class="panel result-panel"
+            id="checkerResult"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            <div class="result-placeholder">
+              <div class="placeholder-icon">⌕</div>
+              <h3>Your review will appear here</h3>
+              <p>
+                We’ll explain any patterns found and suggest safe verification
+                steps.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="notice">
+          <span class="notice-icon">i</span>
+          <p>
+            <strong>Important:</strong> This is an educational aid, not a
+            definitive scam detector. A message with no detected warning signs
+            can still be malicious, and legitimate messages can contain some of
+            these patterns. When in doubt, verify independently.
+          </p>
+        </div>
+      </section>
+
+      <section id="challenge" class="section challenge-section">
+        <div class="section-heading">
+          <p class="eyebrow">02 / PRACTISE SAFER CHOICES</p>
+          <h2>Can you spot <span>the red flags?</span></h2>
+          <p>
+            Work through short, realistic scenarios. Learn why an answer is
+            safer, not just whether it is correct.
+          </p>
+        </div>
+        <div class="quiz-layout">
+          <div class="quiz-intro">
+            <div class="quiz-badge">✦ INTERACTIVE LEARNING</div>
+            <h3>Confidence comes<br />from practice.</h3>
+            <p>
+              Five questions cover suspicious messages, account security,
+              impersonation and online boundaries.
+            </p>
+            <div class="quiz-score-card">
+              <span class="score-number" id="scoreNumber">0</span
+              ><span
+                ><b>Current score</b
+                ><small>Points from answered questions</small></span
+              >
+            </div>
+            <div class="quiz-progress-label">
+              <span id="questionProgress">Question 1 of 5</span
+              ><span id="progressPercent">0%</span>
+            </div>
+            <div class="progress-track"><span id="quizProgressBar"></span></div>
+            <button id="restartQuiz" class="text-button">↻ Restart quiz</button>
+          </div>
+          <div class="panel quiz-panel" id="quizPanel" aria-live="polite">
+            <div class="question-top">
+              <span class="question-tag" id="questionTag">SCENARIO 01</span
+              ><span class="question-type">Choose one answer</span>
+            </div>
+            <h3 id="questionText">
+              A message says your bank account will be locked unless you click a
+              link immediately. What should you do?
+            </h3>
+            <div id="answerOptions" class="answer-options"></div>
+            <div id="quizFeedback" class="quiz-feedback" hidden></div>
+            <div class="quiz-controls">
+              <span id="answeredStatus">Select the safest response.</span
+              ><button id="nextQuestion" class="button button-primary" disabled>
+                Next question →
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="toolkit" class="section toolkit-section">
+        <div class="section-heading">
+          <p class="eyebrow">03 / PRACTICAL RESOURCES</p>
+          <h2>Your digital <span>safety toolkit.</span></h2>
+          <p>
+            Simple steps you can take today. Tick items as you work through
+            them; progress is saved only on this device.
+          </p>
+        </div>
+        <div class="toolkit-grid">
+          <article class="tool-card">
+            <div class="tool-icon lavender">⌑</div>
+            <h3>Secure your accounts</h3>
+            <p>Make account takeover harder with a few core habits.</p>
+            <ul class="checklist" data-checklist="accounts">
+              <li>
+                <label
+                  ><input type="checkbox" data-key="unique-passwords" /> Use
+                  unique passwords for important accounts.</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" data-key="mfa" /> Turn on multi-factor
+                  authentication where available.</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" data-key="recovery" /> Check recovery
+                  email and phone details.</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" data-key="sessions" /> Review
+                  signed-in devices and active sessions.</label
+                >
+              </li>
+            </ul>
+            <div class="card-progress">
+              <span data-progress="accounts"></span>
+            </div>
+          </article>
+          <article class="tool-card">
+            <div class="tool-icon pink">◎</div>
+            <h3>Handle suspicious messages</h3>
+            <p>Slow down and verify before you respond.</p>
+            <ul class="checklist" data-checklist="messages">
+              <li>
+                <label
+                  ><input type="checkbox" data-key="pause" /> Pause if a message
+                  pressures you to act fast.</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" data-key="independent" /> Contact the
+                  organisation through its official app or website.</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" data-key="codes" /> Never share
+                  passwords or one-time security codes.</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" data-key="report" /> Report and block
+                  suspicious messages where appropriate.</label
+                >
+              </li>
+            </ul>
+            <div class="card-progress">
+              <span data-progress="messages"></span>
+            </div>
+          </article>
+          <article class="tool-card">
+            <div class="tool-icon blue">♡</div>
+            <h3>Respond to online abuse</h3>
+            <p>You deserve to feel safe and respected online.</p>
+            <ul class="checklist" data-checklist="abuse">
+              <li>
+                <label
+                  ><input type="checkbox" data-key="evidence" /> If safe,
+                  preserve evidence such as screenshots and dates.</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" data-key="privacy" /> Review privacy,
+                  tagging and location-sharing settings.</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" data-key="trusted" /> Consider telling
+                  someone you trust.</label
+                >
+              </li>
+              <li>
+                <label
+                  ><input type="checkbox" data-key="support" /> Use platform
+                  reporting and trusted support services.</label
+                >
+              </li>
+            </ul>
+            <div class="card-progress"><span data-progress="abuse"></span></div>
+          </article>
+        </div>
+        <div class="resource-banner">
+          <div>
+            <p class="eyebrow">NEED MORE SUPPORT?</p>
+            <h3>Reach out to a trusted service.</h3>
+            <p>
+              If you are in immediate danger in the UK, call 999. For
+              non-emergency police matters, call 101. Choose the right service
+              for your situation.
+            </p>
+          </div>
+          <a
+            class="button button-light"
+            href="https://www.gov.uk/report-suspicious-emails-websites-phishing"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Official UK phishing guidance ↗</a
+          >
+        </div>
+        <div class="resource-links">
+          <a
+            href="https://www.ncsc.gov.uk/collection/phishing-scams"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><span>UK National Cyber Security Centre</span
+            ><b>Phishing guidance ↗</b></a
+          >
+          <a
+            href="https://www.victimsupport.org.uk/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><span>Victim Support (England and Wales)</span
+            ><b>Support and advice ↗</b></a
+          >
+          <a
+            href="https://www.gov.uk/guidance/domestic-abuse-how-to-get-help"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><span>GOV.UK</span><b>Domestic abuse support ↗</b></a
+          >
+        </div>
+        <p class="fine-print">
+          External services have their own privacy policies and availability. If
+          you are unsure which service is right, use an official government or
+          recognised support directory.
+        </p>
+      </section>
+
+      <section id="about" class="section about-section">
+        <div class="about-copy">
+          <p class="eyebrow">04 / OUR APPROACH</p>
+          <h2>Safety tools should empower, <span>not alarm.</span></h2>
+          <p>
+            HERGUARD is a student hackathon prototype designed to make online
+            safety easier to understand. It encourages people to pause, verify
+            information through independent channels and choose the next step
+            that feels safe for them.
+          </p>
+        </div>
+        <div class="principles">
+          <div>
+            <span>01</span>
+            <section>
+              <b>Privacy-conscious</b>
+              <p>
+                Message analysis runs in your browser; checklist progress is
+                stored locally on your device.
+              </p>
+            </section>
+          </div>
+          <div>
+            <span>02</span>
+            <section>
+              <b>Clear about limits</b>
+              <p>
+                Heuristic checks can miss threats or flag legitimate messages.
+                No tool can guarantee safety.
+              </p>
+            </section>
+          </div>
+          <div>
+            <span>03</span>
+            <section>
+              <b>Practical and respectful</b>
+              <p>
+                Information is educational. People facing abuse should choose
+                steps appropriate to their circumstances.
+              </p>
+            </section>
+          </div>
+        </div>
+        <div class="team-credit" aria-labelledby="team-title">
+          <div class="team-credit-top">
+            <p class="eyebrow">BUILT WITH PURPOSE</p>
+            <span class="team-event">HUDHACKHER 2026</span>
+          </div>
+          <h3 id="team-title">Meet <span>Team RES</span></h3>
+          <p class="team-intro">
+            Three teammates. One shared goal: making digital safety clearer and
+            more accessible.
+          </p>
+          <div class="team-members">
+            <div class="team-member">
+              <span class="member-initial">R</span>
+              <div>
+                <strong>Ravindu</strong
+                ><small>Project Lead & Front-End Developer</small>
+              </div>
+            </div>
+            <div class="team-member">
+              <span class="member-initial">E</span>
+              <div>
+                <strong>Eslam</strong><small>UI/UX Designer & Researcher</small>
+              </div>
+            </div>
+            <div class="team-member">
+              <span class="member-initial">S</span>
+              <div>
+                <strong>Sait</strong
+                ><small>Cybersecurity Content & Testing Lead</small>
+              </div>
+            </div>
+          </div>
+          <p class="team-project-note">
+            Creators of HERGUARD · Student hackathon prototype
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#home"
+        ><span class="brand-mark">H</span
+        ><span
+          >HER<span class="brand-accent">GUARD</span
+          ><small>Digital safety, made clearer</small></span
+        ></a
+      >
+      <p>Made by <strong>Team RES</strong> · Ravindu, Eslam &amp; Sait</p>
+      <p class="footer-disclaimer">
+        Educational prototype · Not a substitute for professional, legal or
+        emergency advice.
+      </p>
+      <a href="#home" class="back-top">Back to top ↑</a>
+    </footer>
+  </body>
+</html>
